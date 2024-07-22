@@ -38,7 +38,7 @@ To run the chatbot locally:
 1. Execute the following command in your terminal:
    python app.py
 
-2. Open your web browser and navigate to the local URL provided in the terminal output (typically http://127.0.0.1:7860).
+2. Open your web browser and navigate to the local URL provided in the terminal output.
 
 3. Start interacting with the chatbot by asking questions about workplace first aid programs.
 
@@ -66,4 +66,4 @@ If you wish to contribute:
 
 ## Contact
 
-For any questions or feedback, please reach out to [your-email@example.com].
+For any questions or feedback, please reach out to [pr4368601@alphacollege.me].
