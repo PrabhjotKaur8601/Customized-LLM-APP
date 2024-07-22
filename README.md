@@ -25,7 +25,7 @@ Before you start using this chatbot, make sure you have the following:
 ## Installation
 
 1. Clone this repository:
-   git clone https://github.com/yourusername/WorkplaceFirstAidAssistant.git
+   git clone https://github.com/PrabhjotKaur8601/WorkplaceFirstAidAssistant.git
    cd WorkplaceFirstAidAssistant
 
 2. Install the required packages:
