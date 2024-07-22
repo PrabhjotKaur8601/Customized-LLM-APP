@@ -66,4 +66,4 @@ If you wish to contribute:
 
 ## Contact
 
-For any questions or feedback, please reach out to [pr4368601@alphacollege.me].
+For any questions or feedback, please reach out to pr4368601@alphacollege.me.
