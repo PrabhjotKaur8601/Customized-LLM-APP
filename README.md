@@ -1,42 +1,69 @@
-# Customized-LLM-APP
+# WorkplaceFirstAidAssistant
 
-Building a Retrieval-Augmented Generation (RAG) bot can significantly enhance the capabilities of a language model by incorporating external knowledge to generate more accurate and contextually relevant responses. This guide will walk you through creating a simple RAG bot using Gradio and the Hugging Face APIs.
+A RAG-based LLM chatbot specializing in workplace first aid information
 
-But how does RAG enhance LLM’s performance?
+This README provides a guide to set up and use a specialized chatbot that leverages Retrieval-Augmented Generation (RAG) to provide information about workplace first aid programs, drawing from OSHA guidelines.
 
-RAG improves the performance of language models by augmenting them with external documents. This method retrieves relevant documents based on the user query and combines them with the original prompt before passing them to the language model for response generation. This approach ensures that the language model can access up-to-date and domain-specific information without the need for extensive retraining.
+## Introduction
 
+This project implements a chatbot that specializes in workplace first aid information. It uses a Large Language Model (LLM) combined with a Retrieval-Augmented Generation (RAG) system to provide accurate and relevant information based on OSHA's "Fundamentals of a Workplace First-Aid Program" document.
 
+## Features
 
-A common scenario of RAG helping LLM (Source)
+- Utilizes the Zephyr 7B model for natural language processing
+- Implements RAG for enhanced accuracy and relevance of responses
+- Provides information on workplace first aid programs, procedures, and legal requirements
+- Offers a user-friendly interface powered by Gradio
 
-The basic steps in RAG can be simplified as follows:
+## Prerequisites
 
-Input: The question to which the LLM system responds is referred to as the input. If no RAG is used, the LLM is directly used to respond to the question.
+Before you start using this chatbot, make sure you have the following:
 
-Indexing: If RAG is used, then a series of related documents are indexed by chunking them first, generating embeddings of the chunks, and indexing them into a vector store. At inference, the query is also embedded in a similar way.
+- Python 3.7 or higher
+- pip (Python package manager)
 
+## Installation
 
-Basic retrieval steps in RAG. (Source)
+1. Clone this repository:
+   git clone https://github.com/yourusername/WorkplaceFirstAidAssistant.git
+   cd WorkplaceFirstAidAssistant
 
-Retrieval: The relevant documents are obtained by comparing the query against the indexed vectors, also denoted as “Relevant Documents”.
+2. Install the required packages:
+   pip install -r requirements.txt
 
-Generation: The relevant documents are combined with the original prompt as additional context. The combined text and prompt are then passed to the model for response generation which is then prepared as the final output of the system to the user.
+## Usage
 
-In the example provided, using the model directly fails to respond to the question due to a lack of knowledge of current events. On the other hand, when using RAG, the system can pull the relevant information needed for the model to answer the question appropriately. (Source)
+To run the chatbot locally:
 
-Now Let’s Build a Chatbot using RAG:
+1. Execute the following command in your terminal:
+   python app.py
 
-I have used Zephyr LLM model and all-MiniLM-L6-v2 sentence transformer model. This sentence-transformers model maps sentences & paragraphs to a 384 dimensional dense vector space and can be used for tasks like clustering or semantic search.
+2. Open your web browser and navigate to the local URL provided in the terminal output (typically http://127.0.0.1:7860).
 
-The all-* models were trained on all available training data (more than 1 billion training pairs) and are designed as general purpose models. The all-mpnet-base-v2 model provides the best quality, while all-MiniLM-L6-v2 is 5 times faster and still offers good quality. Toggle All models to see all evaluated original models.
+3. Start interacting with the chatbot by asking questions about workplace first aid programs.
 
-We need the following ingredients:
+## Customization
 
-1. A PDF as your knowledgebase
+You can customize the chatbot by modifying the following in `app.py`:
 
-2. A requirements.txt file
+- Change the `system_message` to alter the chatbot's persona or specialization
+- Modify the `examples` list to add or change the suggested questions
+- Adjust the RAG parameters in the `search_documents` method to fine-tune retrieval
 
-3. An app.py file
+## Disclaimer
 
-4. An account on Hugging Face (See this blog to learn about building a LLM chatbot in Hugging Face)
+This chatbot provides educational information on workplace first-aid. It is not a substitute for professional medical advice, training, or local regulations. Always seek professional medical guidance and adhere to relevant laws.
+
+## Contributing
+
+If you wish to contribute:
+
+1. Fork this repository
+2. Create a new branch (git checkout -b feature/AmazingFeature)
+3. Commit your changes (git commit -m 'Add some AmazingFeature')
+4. Push to the branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+## Contact
+
+For any questions or feedback, please reach out to [your-email@example.com].
